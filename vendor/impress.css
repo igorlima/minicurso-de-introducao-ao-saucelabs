@@ -290,7 +290,7 @@ img.fit {
     max-height: 100%;
 }
 
-#impress ul { list-style-type: katakana; list-style-position: inside; margin: 10px 0 0 10px; }
+#impress ul { list-style-type: arabic-indic; list-style-position: inside; margin: 10px 0 0 10px; }
 #impress ul li { margin-bottom: 5px; }
 
 /*
