@@ -213,7 +213,7 @@ a:focus {
     height: 700px;
     padding: 40px 60px;
 
-    background: url(../klamr_512.png) no-repeat 97.25% 97.25%;
+    background: url(../img/aclogo.png) no-repeat 97.25% 97.25%;
     background-size: 7.25%;
 
     background-color: white;
@@ -235,9 +235,9 @@ a:focus {
     height: 900px;
 }
 
-.slide#cover {
-    background: url(../klamr-backdrop.png) no-repeat left bottom;
-    background-size: 87.5%;
+.slide#apresentacao {
+    /*background: url(../img/aclogo.png) no-repeat right bottom;*/
+    background-size: 17.5%;
 
     background-color: white;
     border: 1px solid rgba(0, 0, 0, .3);
