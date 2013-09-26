@@ -153,17 +153,37 @@
     <p style="float: right"><a href="https://saucelabs.com/docs/javascript-unit-testing-tutorial" target="_blank">veja o tutorial do saucelabs</a><p>
   </div>
 
-  <div id="distributed" class="step slide" data-x="6000" data-y="0" data-z="-2000" data-rotate-x="10" data-rotate-y="-30" data-scale="1">
-    <h1>all repository are created equal !!!</h1>
-    <img class="center" src="alleq.png" />
+  <div id="what-is-jasmine" class="step slide" data-x="6000" data-y="0" data-z="-2000" data-rotate-x="10" data-rotate-y="-30" data-scale="1">
+    <h1>O que é Jasmine</h1>
+    <p>É um framework de desenvolvimento orientado a comportamento para testar códigos JavaScript.</p>
+    <p>Não depende de nenhum outro framework JavaScript.</p>
+    <p>Não precisa de objetos DOM.</p>
+    <p>Tem um síntaxe tão clara que facilmente se excreve testes.</p>
   </div>
 
-  <div id="svn" class="step slide" data-x="6500" data-y="0" data-z="-4000" data-rotate-x="10" data-rotate-y="-30" data-scale="1">
-    <h1>unless one is promoted to be the <b>origin</b> of all things (just like svn)</h1>
-    <img class="center" src="workflow-a.png" />
+  <div id="jasmine-concepts" class="step slide" data-x="6500" data-y="0" data-z="-4000" data-rotate-x="10" data-rotate-y="-30" data-scale="1">
+    <h1>Conceitos essenciais</h1>
+    <ul>
+      <li>Suites
+        <pre class="prettyprint lang-js">
+          describe("Meu objeto", function() {
+            ...
+          });</pre>
+      </li>
+      <li>Specs
+        <pre class="prettyprint lang-js">
+          it("deve ter a propriedade X definida", function() {
+            ...
+          });</pre>
+      </li>
+      <li>Expectations
+        <pre class="prettyprint lang-js">
+          expect( meu_objeto.X ).toBeDefined();</pre>
+      </li>
+    </ul>
   </div>
 
-  <div id="github" class="step slide" data-x="7000" data-y="0" data-z="-6000" data-rotate-x="10" data-rotate-y="-30" data-scale="1">
+  <div id="jasmine-matchers" class="step slide" data-x="7000" data-y="0" data-z="-6000" data-rotate-x="10" data-rotate-y="-30" data-scale="1">
     <h1>github: you may fork, but you must request to be pulled</h1>
     <img class="center" src="workflow-b.png" />
   </div>
