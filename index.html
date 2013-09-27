@@ -247,8 +247,8 @@
 {
   "framework": "jasmine",
   "src_files": [
-    "calc.js",
-    "calc_spec.js"
+    "calculadora.js",
+    "calculadora_spec.js"
   ]
 }</pre>
     <p style="float: right"><a href="https://github.com/airportyh/testem#configuration-file" target="_blank">mais detalhes sobre a configuração</a><p>
@@ -256,13 +256,13 @@
 
   <div class="step slide" data-x="10000" data-y="0" data-z="-18000" data-rotate-x="10" data-rotate-y="-30" data-scale="1">
     <h1>Iniciando a especificação / código </h1>
-    <pre class="prettyprint lang-js">//criar o arquivo calc.js na raiz do projeto
+    <pre class="prettyprint lang-js">//criar o arquivo calculadora.js na raiz do projeto
 (function (global) {
-  global.myCalc = {
+  global.Calculadora = {
 
   };
 })(this);</pre>
-    <pre class="prettyprint lang-js">//criar o arquivo calc_spec.js na raiz do projeto
+    <pre class="prettyprint lang-js">//criar o arquivo calculadora_spec.js na raiz do projeto
 describe("Minha calculadora", function() {
   it("um exemplo de especificação", function() {
     expect(true).toBe(true);

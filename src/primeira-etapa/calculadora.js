@@ -1,5 +1,5 @@
 (function (global) {
-  global.myCalc = {
+  global.Calculadora = {
 
   };
 })(this);

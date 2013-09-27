@@ -1,7 +1,7 @@
 {
   "framework": "jasmine",
   "src_files": [
-    "calc.js",
-    "calc_spec.js"
+    "calculadora.js",
+    "calculadora_spec.js"
   ]
 }
