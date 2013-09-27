@@ -202,18 +202,58 @@
     </ul>
   </div>
 
-  <div id="dictator" class="step slide" data-x="7500" data-y="0" data-z="-8000" data-rotate-x="10" data-rotate-y="-30" data-scale="1">
-    <h1>dictator: be careful of who you trust when merging!</h1>
-    <img class="center" src="workflow-c.png" />
+  <div class="step slide" data-x="7500" data-y="0" data-z="-8000" data-rotate-x="10" data-rotate-y="-30" data-scale="1">
+    <h1>Como testar localmente em vários browsers</h1>
+    <ul>
+      <li>
+        <a href="https://github.com/airportyh/testem" target="_blank">Testem</a>
+      </li>
+      <li>
+        <a href="http://karma-runner.github.io/0.10/index.html" target="_blank">Karma / TestacularJS</a>
+      </li>
+      <li>etc</li>
+    </ul>
   </div>
 
-  <div id="integrity" class="step slide" data-x="8000" data-y="0" data-z="-10000" data-rotate-x="10" data-rotate-y="-30" data-scale="1">
-    <q>authentication of history</q>
+  <div id="testem-introduction" class="step slide" data-x="8000" data-y="0" data-z="-10000" data-rotate-x="10" data-rotate-y="-30" data-scale="1">
+    <q>Testem</q>
     <ul>
-      <li>each commit hash identify the snapshot content and the full associated history (more details comming)</li>
-      <li>each tag is an immutable pointer to a commit hashes</li>
-      <li>tags can be cryptographically signed with GPG</li>
+      <li>Test'em 'Scripts!</li>
+      <li>Uma maneira mais prazerosa de rodar os testes em JS</li>
+      <li>'Testes podem ser chatos e tediosos'</li>
+      <li>Fazer testes de forma mais fácis, faz com que a gente escreva mais testes</li>
     </ul>
+  </div>
+
+  <div id="testem-installation" class="step slide" data-x="8500" data-y="0" data-z="-12000" data-rotate-x="10" data-rotate-y="-30" data-scale="1">
+    <q>Instalando o Testem</q>
+    <pre class="prettyprint lang-sh">
+
+      npm install testem -g
+    </pre>
+  </div>
+
+  <div class="step slide" data-x="9000" data-y="0" data-z="-14000" data-rotate-x="10" data-rotate-y="-30" data-scale="1">
+    <q>Mãos na massa?</q>
+    <p>Vamos construir uma calculadora?</p>
+  </div>
+
+  <div id="testem-configuration" class="step slide" data-x="9500" data-y="0" data-z="-16000" data-rotate-x="10" data-rotate-y="-30" data-scale="1">
+    <h1>Configurando o Testem</h1>
+    <p> Formato JSON ou YAML</p>
+    <pre class="prettyprint lang-js">//criar o arquivo testem.json na raiz do projeto
+{
+  "framework": "jasmine",
+  "src_files": [
+    "calc.js",
+    "calc_spec.js"
+  ]
+}</pre>
+    <p style="float: right"><a href="https://github.com/airportyh/testem#configuration-file" target="_blank">mais detalhes sobre a configuração</a><p>
+  </div>
+
+  <div class="step slide" data-x="10000" data-y="0" data-z="-18000" data-rotate-x="10" data-rotate-y="-30" data-scale="1">
+
   </div>
 
   <div id="engineering" class="step" data-x="3000" data-y="2400" data-rotate="0" data-scale="6">
