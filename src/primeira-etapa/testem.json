@@ -1,0 +1,7 @@
+{
+  "framework": "jasmine",
+  "src_files": [
+    "calc.js",
+    "calc_spec.js"
+  ]
+}
