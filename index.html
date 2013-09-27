@@ -255,7 +255,19 @@
   </div>
 
   <div class="step slide" data-x="10000" data-y="0" data-z="-18000" data-rotate-x="10" data-rotate-y="-30" data-scale="1">
+    <h1>Iniciando a especificação / código </h1>
+    <pre class="prettyprint lang-js">//criar o arquivo calc.js na raiz do projeto
+(function (global) {
+  global.myCalc = {
 
+  };
+})(this);</pre>
+    <pre class="prettyprint lang-js">//criar o arquivo calc_spec.js na raiz do projeto
+describe("Minha calculadora", function() {
+  it("um exemplo de especificação", function() {
+    expect(true).toBe(true);
+  });
+});</pre>
   </div>
 
   <div id="engineering" class="step" data-x="3000" data-y="2400" data-rotate="0" data-scale="6">
@@ -412,17 +424,22 @@ $ git stash pop
   </div>
 
   <div id="next" class="step slide" data-x="1000" data-y="5000" data-rotate="0" data-scale="4">
-    <h1>where next?</h1>
-    <ul>
-      <li>Choose a GUI: <a href="http://git-scm.com/downloads/guis">Official GUI clients list</a>, my fav is <a href="http://gitx.laullon.com/">GitX</a> on OS X, if you use Eclipse then use <a href="http://www.eclipse.org/egit/">EGit</a>.</li>
-      <li>Read the <a href="http://git-scm.com/docs/gittutorial">official tutorial</a> ($ man gittutorial).</li>
-      <li>Follow the <a href="http://gitimmersion.com/">git immersion</a>, a guided tour of git.</li>
-      <li>Read <a href="http://www-cs-students.stanford.edu/~blynn/gitmagic/">git magic</a>, a more involved/advanced tour of git.</li>
-      <li>Read the <a href="http://git-scm.com/book">Pro Git book</a>, it's quite short & sweet.</li>
-      <li><a href="http://git-scm.com/docs">RTFM</a></li>
-      <li>Hangout on #git on <a href="irc://irc.freenode.net/git">irc.freenode.net</a>.</li>
-    </ul>
-    <p class="caption" style="margin-top: 50px">brought to you by<a href="http://twitter.com/chickamade">@chickamade</a>, engineer at <a href="https://klamr.to/">klamr.to</a>.</p>
+    <q>Muito Obrigado</q>
+    <p>Gostou?
+      <span style="font-size: 0.6em">então dê um <strong>Star</strong> <i>(uma estrela)</i> no 
+        <a href="https://github.com/igorlima/minicurso-de-introducao-ao-saucelabs" target="_blank">
+          GitHub
+        </a>
+      </span>
+    </p>
+
+    <p>Críticas / dúvidas / sugestões?
+      <span style="font-size: 0.6em">então abra uma <strong>Issue</strong> ou <strong>Fork</strong> o projeto no 
+        <a href="https://github.com/igorlima/minicurso-de-introducao-ao-saucelabs" target="_blank">
+          GitHub
+        </a>
+      </span>
+    </p>
   </div>
 
   <div id="overview" class="step" data-x="1400" data-y="1600" data-scale="12">
