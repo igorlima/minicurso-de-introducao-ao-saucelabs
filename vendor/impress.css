@@ -290,6 +290,12 @@ img.fit {
     max-height: 100%;
 }
 
+img.github-icon {
+    width: 40px;
+    height: 40px;
+    vertical-align: bottom;
+}
+
 #impress ul { list-style-type: arabic-indic; list-style-position: inside; margin: 10px 0 0 10px; }
 #impress ul li { margin-bottom: 5px; }
 
