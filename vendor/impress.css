@@ -296,6 +296,12 @@ img.github-icon {
     vertical-align: bottom;
 }
 
+img.creating-saucelabs-account,
+img.accessing-saucelabs-account {
+    width: 800px;
+    height: 530px;
+}
+
 #impress ul { list-style-type: arabic-indic; list-style-position: inside; margin: 10px 0 0 10px; }
 #impress ul li { margin-bottom: 5px; }
 
