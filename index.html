@@ -553,6 +553,127 @@ expect('everthing').to.be.ok;</pre>
     </table>
   </div>
 
+  <div class="step slide" data-x="8000" data-y="4800" data-rotate="15" data-scale="1">
+    <h1>Um exemplo</h1>
+    <pre class="prettyprint lang-js">/**criando arquivo para acessar o PhantomJS como webdriver
+nome do arquivo: config-wd-using-phantom.js */
+var exports   = module.exports = {},
+    webdriver = require('wd'),
+    browser   = exports.browser = webdriver.remote({
+      hostname: "localhost",
+      port: 8910
+    });
+
+process.on( 'uncaughtException', function(err) {
+  console.error('Caught exception: ' + err.stack );
+});</pre>
+  </div>
+
+  <div class="step slide" data-x="8000" data-y="5600" data-rotate="15" data-scale="1">
+    <pre class="prettyprint lang-js">/**criando o arquivo apenas-um-exemplo.js */
+var vows    = require('vows'),
+    expect  = require('chai').expect,
+    browser = require('./config-wd-using-phantom.js').browser;
+
+vows.describe('Apenas um exemplo')
+.addBatch({
+  'Criando uma nova sessão no WebDriver': { /** ... */ }
+})
+.addBatch({
+  'Acessando a página de teste do SauceLabs': { /** ... */ }
+})
+.addBatch({
+  'Verificando o título da página': { /** ... */ }
+})
+.addBatch({
+  'Fechando o navegador': { /** ... */ }
+}).export(module);</pre>
+  </div>
+
+  <div class="step slide" data-x="8000" data-y="6400" data-rotate="15" data-scale="1">
+    <pre class="prettyprint lang-js">/**criando uma nova sessão no WebDriver */
+.addBatch({
+  'Criando uma nova sessão no WebDriver': {
+    topic: function() {
+      var callback = this.callback;
+      browser.init( {}, function(err, sessionID, capabilities) {
+        callback( err );
+      });
+    },
+    'Sessão criada': function() { /**...*/ }
+  }
+})</pre>
+  </div>
+
+  <div class="step slide" data-x="8000" data-y="7200" data-rotate="15" data-scale="1">
+    <pre class="prettyprint lang-js">/**acessando a página de teste do SauceLabs */
+.addBatch({
+  'Acessando a página de teste do SauceLabs': {
+    topic: function() {
+      var callback = this.callback;
+      browser.get( 'http://saucelabs.com/test/guinea-pig', function(err) {
+        callback( err );
+      });
+    },
+    'Página de teste aberta': function() { /**...*/ }
+  }
+})</pre>
+  </div>
+
+  <div class="step slide" data-x="8000" data-y="8000" data-rotate="15" data-scale="1">
+    <pre class="prettyprint lang-js">/**verificando o título da página */
+.addBatch({
+  'Verificando o título da página': {
+    topic: function() {
+      var callback = this.callback;
+      browser.title( function(err, title) {
+        callback( err, title );
+      });
+    },
+    "O título da página deve conter 'Sauce Labs'": function(title) {
+      expect(title).to.contain('Sauce Labs');
+    },
+    "O título da página deve conter 'page title'": function(title) {
+      expect(title).to.contain('page title');
+    },
+    "O título da página deve conter 'I am a'": function(title) {
+      expect(title).to.contain('I am a');
+    }
+  }
+})</pre>
+  </div>
+
+  <div class="step slide" data-x="8000" data-y="8800" data-rotate="15" data-scale="1">
+    <pre class="prettyprint lang-js">/**fechando o navegador */
+.addBatch({
+  'Fechando o navegador': {
+    topic: function() {
+      var callback = this.callback;
+      browser.quit( function(err){
+        callback( err );
+      });
+    },
+    'Fim': function() { /**...*/ }
+  }
+})</pre>
+  </div>
+
+  <div class="step slide" data-x="8000" data-y="9600" data-rotate="15" data-scale="1">
+    <h1>Rodando o teste de exemplo</h1>
+    <pre class="prettyprint lang-sh">#instalando o PhantomJS e o Vows como comandos globais
+      npm install -g phantomjs vows
+    </pre>
+    <pre class="prettyprint lang-sh">#instalando dependências do NodeJS
+      npm install wd vows chai
+    </pre>
+    <pre class="prettyprint lang-sh">#rodando o PhantomJS como webdriver
+      phantomjs --webdriver=localhost:8910
+    </pre>
+    <pre class="prettyprint lang-sh">#rodando o vows
+      vows apenas-um-exemplo.js --spec
+    </pre>
+  </div>
+
   <div id="getstarted" class="step slide" data-x="-2400" data-y="-500" data-rotate="45" data-scale="2">
     <h1>getting started</h1>
     <pre class="prettyprint" >
