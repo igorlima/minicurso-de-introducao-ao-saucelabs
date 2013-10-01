@@ -676,7 +676,26 @@ vows.describe('Apenas um exemplo')
 
   <div class="step slide" data-x="8000" data-y="10400" data-rotate="15" data-scale="1">
     <h1><a href="https://saucelabs.com/docs/platforms" target="_blank">164 dispositivos/SO/navegadores</a></h1>
-    <img class="164-platforms" src="img/164-platforms.png">
+    <img class="hundreds-of-platforms" src="img/164-platforms.png">
+  </div>
+
+  <div class="step slide" data-x="8000" data-y="11200" data-rotate="15" data-scale="1">
+    <pre pan style="font-size: 0.65em" class="prettyprint lang-js">/**criando arquivo (config-wd-using-saucelabs.js) para acessar o SauceLabs como webdriver */
+var exports   = module.exports = {},
+    webdriver = require('wd'),
+    desired   = exports.desired = {
+      "browserName": "chrome", "version": "", "platform": "Linux",
+      "tags": ["segunda-etapa", "minicurso"], "name": "Teste de interface da 2a etapa",
+      "public": "public", "build": "primeiro build", "tunnel-identifier": "minicurso", "record-video": true
+    },
+    browser   = exports.browser = webdriver.remote({
+      hostname: "ondemand.saucelabs.com", port: 80,
+      user: process.env.SAUCE_USERNAME, pwd:  process.env.SAUCE_ACCESS_KEY
+    });
+process.on( 'uncaughtException', function(err) {
+  console.error('Caught exception: ' + err.stack );
+});</pre>
+    <p style="float: right"><a href="https://saucelabs.com/docs/additional-config" target="_blank">veja outras configurações do atributo <i>desired</i></a></p>
   </div>
 
   <div id="getstarted" class="step slide" data-x="-2400" data-y="-500" data-rotate="45" data-scale="2">
