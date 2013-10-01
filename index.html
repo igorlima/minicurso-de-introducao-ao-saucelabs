@@ -698,6 +698,40 @@ process.on( 'uncaughtException', function(err) {
     <p style="float: right"><a href="https://saucelabs.com/docs/additional-config" target="_blank">veja outras configurações do atributo <i>desired</i></a></p>
   </div>
 
+  <div class="step slide" data-x="8000" data-y="12000" data-rotate="15" data-scale="1">
+    <pre class="prettyprint lang-js">/**motificando o arquivo apenas-um-exemplo.js */
+var vows    = require('vows'),
+    expect  = require('chai').expect,
+    config  = require('./config-wd-using-saucelabs.js'),
+    browser = config.browser,
+    desired = config.desired;
+
+vows.describe('Apenas um exemplo')
+.addBatch({
+  'Criando uma nova sessão no WebDriver': {
+    topic: function() {
+      var callback = this.callback;
+      browser.init( desired, function(err, sessionID, capabilities) {
+        callback( err );
+      });
+    },
+    'Sessão criada': function() { /**...*/ }
+  }
+})</pre>
+  </div>
+
+  <div class="step slide" data-x="8000" data-y="12800" data-rotate="15" data-scale="1">
+    <h1>Rodando o teste de exemplo pelo SauceLabs</h1>
+    <pre class="prettyprint lang-sh">#iniciando a VPN
+      java -jar Sauce-Connect.jar \
+          --tunnel-identifier "minicurso" \
+          $SAUCE_USERNAME $SAUCE_ACCESS_KEY
+    </pre>
+    <pre class="prettyprint lang-sh">#rodando o vows
+      vows apenas-um-exemplo.js --spec
+    </pre>
+  </div>
+
   <div id="getstarted" class="step slide" data-x="-2400" data-y="-500" data-rotate="45" data-scale="2">
     <h1>getting started</h1>
     <pre class="prettyprint" >
