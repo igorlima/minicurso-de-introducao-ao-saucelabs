@@ -299,7 +299,9 @@ img.github-icon {
 img.creating-saucelabs-account,
 img.accessing-saucelabs-account,
 img.viewing-on-ipad6,
-img.hundreds-of-platforms {
+img.hundreds-of-platforms,
+img.viewing-test-on-saucelabs,
+img.watching-test-on-saucelabs {
     width: 800px;
     height: 530px;
 }
