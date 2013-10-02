@@ -844,23 +844,8 @@ $ git grep XXX v3.25
   </div>
 
   <div id="jobdone" class="step slide" data-x="-1400" data-y="5000" data-rotate="-90" data-scale="1">
-    <h1>git is flexible, and get the job done</h1>
-    <pre>
-# forgot to commit a new file, but local changes not pushed yet
-$ git add forgotten.py
-$ git commit --amend
-
-# i want that fix in my branch, now!
-$ git cherry-pick ${sha1}
-
-# i was working on feature X, made changes to 10 files
-# now i must leave it aside to work on a hotfix
-$ git stash save 'partial work on feature X'
-$ git checkout -b v2.30.1-hotfix v.2.30.1  # work on hotfix
-
-$ git checkout working-branch
-$ git stash pop
-    </pre>
+    <q>"the more we share, the richer we all become"</q><br />
+    <span class="footnote"><a href="http://braythwayt.com/2013/10/01/javascript-allonge-is-free.html" target="_blank">Reg Braithwaite</a></span>
   </div>
 
   <div id="next" class="step slide" data-x="1000" data-y="5000" data-rotate="0" data-scale="4">
