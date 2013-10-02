@@ -13,6 +13,10 @@ Uma demonstração do **impress.js** pode ser visto no [site oficial](http://bar
 Um módulo javascript e CSS que permite usar _highlights_ em códigos fontes dentro de uma página html. <br>
 Para ver exemplos, veja a página de introdução do [site oficial](http://google-code-prettify.googlecode.com/svn/trunk/README.html)
 
+### [Metro-UI-CSS](http://metroui.org.ua/)
+Um conjunto de estilos CSS para criar sites com uma interface similar ao Windows 8 Metro UI
+
+
 ### 'what is git' por [@chickamade](http://twitter.com/chickamade)
 Uma apresentação feita por @chickamade, intitulada como _"Git, the stupid content tracker, for the novice and the semi-experience git user"_, a qual foi usada como referência na criação dos slides desse mini-curso.
 
