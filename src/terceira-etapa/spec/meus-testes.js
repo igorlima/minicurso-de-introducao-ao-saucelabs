@@ -2,7 +2,7 @@ var vows    = require('vows'),
     expect  = require('chai').expect,
     browser = require('./configurando-webdriver.js').browser;
 
-vows.describe('Apenas um exemplo')
+vows.describe('Testanto os botões de somar, subtrair, multiplar e dividir')
 .addBatch({
   'Criando uma nova sessão no WebDriver': {
     topic: function() {
