@@ -894,6 +894,47 @@ watch: {
 }</pre>
   </div>
 
+  <div class="step slide" data-x="8000" data-y="22400" data-rotate="15" data-scale="1">
+    <q>Agora que implementamos o teste, vamos codar</q>
+    <pre class="prettyprint lang-js">/**modificando o arquivo source/js/app.js */
+BOTAO.LIMPAR.click( function(){
+  INPUT.PRIMEIRO_NUMERO.val( '' );
+});</pre>
+  </div>
+
+  <div class="step slide" data-x="8000" data-y="23200" data-rotate="15" data-scale="1">
+    <pre class="prettyprint lang-js" style="font-size: 0.7em">/**Verificando se o segundo campo está vazio */
+'Selecionando o campo do segundo número': {
+  topic: function(botao_de_limpar) {
+    var callback = this.callback;
+    browser.elementByCssSelector( 'div#segundo-numero .input-control.text input',
+      function(err, campo_do_segundo_numero) {
+        callback( err, campo_do_segundo_numero );
+    });
+  },
+  "Pegando o valor contido no segundo campo": {
+    topic: function(campo_do_segundo_numero, botao_de_limpar) {
+      var callback = this.callback;
+      campo_do_segundo_numero.getValue( function(err, segundo_numero) {
+        callback( err, segundo_numero );
+      });
+    },
+    'O valor do segundo campo DEVE estar vazio': function(segundo_numero) {
+      expect( segundo_numero ).to.be.empty;
+    }
+  }
+}</pre>
+  </div>
+
+  <div class="step slide" data-x="8000" data-y="24000" data-rotate="15" data-scale="1">
+    <q>Agora que implementamos o teste, vamos codar</q>
+    <pre class="prettyprint lang-js">/**modificando o arquivo source/js/app.js */
+BOTAO.LIMPAR.click( function(){
+  INPUT.PRIMEIRO_NUMERO.val( '' );
+  INPUT.SEGUNDO_NUMERO.val( '' );
+});</pre>
+  </div>
+
   <div id="getstarted" class="step slide" data-x="-2400" data-y="-500" data-rotate="45" data-scale="2">
     <h1>getting started</h1>
     <pre class="prettyprint" >

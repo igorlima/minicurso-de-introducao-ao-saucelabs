@@ -92,6 +92,25 @@ vows.describe('Limpando os campos de números')
           expect( primeiro_numero ).to.be.empty;
         }
       }
+    },
+    'Selecionando o campo do segundo número': {
+      topic: function(botao_de_limpar) {
+        var callback = this.callback;
+        browser.elementByCssSelector( 'div#segundo-numero .input-control.text input', function(err, campo_do_segundo_numero) {
+          callback( err, campo_do_segundo_numero );
+        });
+      },
+      "Pegando o valor contido no segundo campo": {
+        topic: function(campo_do_segundo_numero, botao_de_limpar) {
+          var callback = this.callback;
+          campo_do_segundo_numero.getValue( function(err, segundo_numero) {
+            callback( err, segundo_numero );
+          });
+        },
+        'O valor do segundo campo DEVE estar vazio': function(segundo_numero) {
+          expect( segundo_numero ).to.be.empty;
+        }
+      }
     }
   }
 })
