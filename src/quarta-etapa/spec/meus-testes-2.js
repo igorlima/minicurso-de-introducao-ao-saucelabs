@@ -143,35 +143,6 @@ vows.describe('Limpando os campos de números')
     }
   }
 })
-.addBatch({
-  'Clicando no botão de limpar do primerio campo': {
-    topic: function() {
-      var callback = this.callback;
-      browser.elementByCssSelector( 'div#primeiro-numero .input-control.text .btn-clear', function(err, botao_de_limpar) {
-        err && callback(err);
-        botao_de_limpar.click( function(err){
-          console.warn(err);
-          callback(err, botao_de_limpar);
-        });
-      });
-    },
-    'Verificando o valor do primerio campo': {
-      topic: function(botao_de_limpar) {
-        var callback = this.callback;
-        browser.elementByCssSelector( 'div#primeiro-numero .input-control.text input', function(err, campo_do_primeiro_numero) {
-          err && callback( err );
-          campo_do_primeiro_numero.getValue( function(err, primeiro_numero) {
-            callback( err, primeiro_numero );
-          });
-        });
-      },
-      "O valor do primerio campo DEVE estar vazio": function(primeiro_numero) {
-        expect( primeiro_numero ).to.be.empty;
-      }
-    }
-  }
-})
-
 
 .addBatch({
   'Fechando o navegador': {
