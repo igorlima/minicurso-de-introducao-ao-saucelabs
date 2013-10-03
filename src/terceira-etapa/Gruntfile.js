@@ -19,7 +19,7 @@ module.exports = function( grunt ){
       }
     },
     watch: {
-      spec: {
+      all: {
         options: {
           atBegin: true
         },
@@ -29,9 +29,10 @@ module.exports = function( grunt ){
     }
   });
 
-  grunt.loadNpmTasks('grunt-vows');
+  grunt.loadNpmTasks('grunt-vows'); // Linux e OSX
+  //grunt.loadNpmTasks('grunt-vows-runner'); //querido Windows
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-connect');
 
-  grunt.registerTask('default', ['vows']);
+  grunt.registerTask('default', ['connect', 'vows']);
 };
