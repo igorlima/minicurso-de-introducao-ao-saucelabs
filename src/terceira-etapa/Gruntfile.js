@@ -20,6 +20,9 @@ module.exports = function( grunt ){
     },
     watch: {
       spec: {
+        options: {
+          atBegin: true
+        },
         files: ['source/**/*', 'spec/meus-testes.js'],
         tasks: ['connect', 'vows']
       }

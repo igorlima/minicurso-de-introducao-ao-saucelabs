@@ -33,10 +33,10 @@ vows.describe('Apenas um exemplo')
         callback( err, title );
       });
     },
-    "O título da página deve conter 'Sauce Labs'": function(title) {
+    "O título deve conter 'Sauce Labs'": function(title) {
       expect(title).to.contain('Minha');
     },
-    "O título da página deve conter 'page title'": function(title) {
+    "O título deve conter 'page title'": function(title) {
       expect(title).to.contain('calculadora');
     }
   }
