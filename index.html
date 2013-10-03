@@ -787,12 +787,49 @@ grunt watch
   </div>
 
   <div class="step slide" data-x="8000" data-y="18400" data-rotate="15" data-scale="1">
+    <pre class="prettyprint lang-js">/**criando o arquivo spec/meus-testes-2.js */
+var vows    = require('vows'),
+    expect  = require('chai').expect,
+    browser = require('./config-wd-using-phantom.js').browser;
+
+vows.describe('Criando uma nova sessão no WebDriver')
+.addBatch({
+  'Criando uma nova sessão no WebDriver': { /** ... */ }
+})
+.addBatch({
+  'Acessando a página da calculadora': { /** ... */ }
+})
+.addBatch({
+  '...': { /** ... */ }
+})
+.addBatch({
+  'Fechando o navegador': { /** ... */ }
+}).export(module);</pre>
   </div>
 
   <div class="step slide" data-x="8000" data-y="19200" data-rotate="15" data-scale="1">
+    <pre class="prettyprint lang-js">/**Adicionando o novo arquivo de teste no Grunttile */
+vows: {
+  all: {
+    src: ['spec/meus-testes.js', 'spec/meus-testes-2.js']
+  }
+},
+watch: {
+  all: {
+    files: [
+      'source/**/*',
+      'spec/meus-testes.js',
+      'spec/meus-testes-2.js'
+    ],
+    tasks: ['connect', 'vows']
+  }
+}</pre>
   </div>
 
   <div class="step slide" data-x="8000" data-y="20000" data-rotate="15" data-scale="1">
+  </div>
+
+  <div class="step slide" data-x="8000" data-y="20800" data-rotate="15" data-scale="1">
   </div>
 
   <div id="getstarted" class="step slide" data-x="-2400" data-y="-500" data-rotate="45" data-scale="2">
