@@ -26,8 +26,41 @@ vows.describe('Limpando os campos de números')
   }
 })
 .addBatch({
-  '...': {
-    
+  'Selecionando o campo do primeiro número': {
+    topic: function() {
+      var callback = this.callback;
+      browser.elementByCssSelector( 'div#primeiro-numero .input-control.text input', function(err, element) {
+        callback( err, element );
+      });
+    },
+    "Digitando o número '20'": {
+      topic: function(element) {
+        var callback = this.callback;
+        element.type( "20", function(err) {
+          callback( err, element );
+        });
+      },
+      'Número 20 digitado': function() { /**...*/ }
+    }
+  }
+})
+.addBatch({
+  'Selecionando o campo do segundo número': {
+    topic: function() {
+      var callback = this.callback;
+      browser.elementByCssSelector( 'div#segundo-numero .input-control.text input', function(err, element) {
+        callback( err, element );
+      });
+    },
+    "Digitando o número '4'": {
+      topic: function(element) {
+        var callback = this.callback;
+        element.type( "4", function(err) {
+          callback( err, element );
+        });
+      },
+      'Número 4 digitado': function() { /**...*/ }
+    }
   }
 })
 .addBatch({
