@@ -64,6 +64,38 @@ vows.describe('Limpando os campos de números')
   }
 })
 .addBatch({
+  'Clicando no botão de limpar': {
+    topic: function() {
+      var callback = this.callback;
+      browser.elementByCssSelector( 'button#btnLimpar', function(err, botao_de_limpar) {
+        err && callback(err);
+        botao_de_limpar.click( function(err){
+          callback(err, botao_de_limpar);
+        })
+      });
+    },
+    'Selecionando o campo do primeiro número': {
+      topic: function(botao_de_limpar) {
+        var callback = this.callback;
+        browser.elementByCssSelector( 'div#primeiro-numero .input-control.text input', function(err, campo_do_primeiro_numero) {
+          callback( err, campo_do_primeiro_numero );
+        });
+      },
+      "Pegando o valor contido no primerio campo": {
+        topic: function(campo_do_primeiro_numero, botao_de_limpar) {
+          var callback = this.callback;
+          campo_do_primeiro_numero.getValue( function(err, primeiro_numero) {
+            callback( err, primeiro_numero );
+          });
+        },
+        'O valor do primerio campo DEVE estar vazio': function(primeiro_numero) {
+          expect( primeiro_numero ).to.be.empty;
+        }
+      }
+    }
+  }
+})
+.addBatch({
   'Fechando o navegador': {
     topic: function() {
       var callback = this.callback;

@@ -851,6 +851,47 @@ watch: {
   </div>
 
   <div class="step slide" data-x="8000" data-y="20800" data-rotate="15" data-scale="1">
+    <pre class="prettyprint lang-js" style="font-size: 0.7em">/**Clicando no botão limpar */
+.addBatch({
+  'Clicando no botão de limpar': {
+    topic: function() {
+      var callback = this.callback;
+      browser.elementByCssSelector( 'button#btnLimpar', function(err, botao_de_limpar) {
+        err && callback(err);
+        botao_de_limpar.click( function(err){
+          callback(err, botao_de_limpar);
+        })
+      });
+    },
+    'Selecionando o campo do primeiro número': {
+      /** ... */
+    }
+  }
+})</pre>
+  </div>
+
+  <div class="step slide" data-x="8000" data-y="21600" data-rotate="15" data-scale="1">
+    <pre class="prettyprint lang-js" style="font-size: 0.7em">/**Verificando se o primerio campo está vazio */
+'Selecionando o campo do primeiro número': {
+  topic: function(botao_de_limpar) {
+    var callback = this.callback;
+    browser.elementByCssSelector( 'div#primeiro-numero .input-control.text input',
+      function(err, campo_do_primeiro_numero) {
+        callback( err, campo_do_primeiro_numero );
+    });
+  },
+  "Pegando o valor contido no primerio campo": {
+    topic: function(campo_do_primeiro_numero, botao_de_limpar) {
+      var callback = this.callback;
+      campo_do_primeiro_numero.getValue( function(err, primeiro_numero) {
+        callback( err, primeiro_numero );
+      });
+    },
+    'O valor do primerio campo DEVE estar vazio': function(primeiro_numero) {
+      expect( primeiro_numero ).to.be.empty;
+    }
+  }
+}</pre>
   </div>
 
   <div id="getstarted" class="step slide" data-x="-2400" data-y="-500" data-rotate="45" data-scale="2">
