@@ -1,0 +1,22 @@
+{
+  "author": {
+    "name": "Igor Ribeiro Lima",
+    "email": "lima.igorribeiro@gmail.com",
+    "website": "http://github.com/igorlima"
+  },
+  "version": "0.0.1",
+  "devDependencies": {
+    "grunt": "0.4.1",
+    "wd":    "0.1.5",
+    "chai":  "1.8.0",
+    "vows":  "0.7.0",
+    "grunt-vows":            "0.4.0",
+    "grunt-vows-runner":     "0.6.0",
+    "grunt-contrib-watch":   "0.5.3",
+    "grunt-contrib-connect": "0.5.0"
+  },
+  "scripts": {
+    "preinstall": "npm install -g grunt-cli",
+    "test": "grunt"
+  }
+}

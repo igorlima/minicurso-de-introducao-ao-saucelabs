@@ -1,0 +1,113 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+  <meta name="description" content="Minha calculadora do minicurso de introdução ao SauceLabs">
+  <meta name="author" content="igorlima">
+  <meta name="keywords" content="calc, learning, BDD, testing, saucelabs">
+
+  <link href="css/metroui-modern.css" rel="stylesheet">
+  <link href="css/metroui-modern-responsive.css" rel="stylesheet">
+  <link href="css/metroui-site.css" rel="stylesheet">
+
+  <title>Minha calculadora</title>
+</head>
+<body class="metrouicss">
+
+  <div class="page">
+    <div class="nav-bar">
+      <div class="nav-bar-inner padding10">
+        <span class="pull-menu"></span>
+        <a href="#">
+          <span class="element brand">
+            <img class="place-left" src="img/logo32.png" style="height: 20px">
+            Minha Calculadora
+          </span>
+        </a>
+        <div class="divider"></div>
+    </div>
+  </div>
+
+  <div class="page" id="page-index">
+    <div class="page-region">
+      <div class="page-region-content">
+        <div class="grid">
+          <div class="row">
+            <div class="span8">
+
+              <div class="row">
+                <div id="primeiro-numero" class="span6">
+                  <h2>Primeiro Número</h2>
+                  <div class="input-control text">
+                    <input type="text" autofocus="">
+                    <button class="btn-clear" tabindex="-1" type="button"></button>
+                  </div>
+                </div>
+                <div id="segundo-numero" class="span6">
+                  <h2>Segundo Número</h2>
+                  <div class="input-control text">
+                    <input type="text">
+                    <button class="btn-clear" tabindex="-1" type="button"></button>
+                  </div>
+                </div>
+                <div id="resultado-da-calculadora" class="span6">
+                  <h2>Resultado</h2>
+                  <div class="input-control text">
+                    <input type="text" disabled="">
+                    <button class="btn-clear" tabindex="-1" type="button"></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="span4">
+              <button id="btnSomar" class="shortcut bg-color-white">
+                <span class="icon"><i class="icon-plus-2 fg-color-blueDark"></i></span>
+                <span class="label fg-color-blueDark">Somar</span>
+              </button>
+              <button id="btnSubtrair" class="shortcut bg-color-white">
+                <span class="icon"><i class="icon-minus-2 fg-color-orange"></i></span>
+                <span class="label fg-color-orange">Subtrair</span>
+              </button>
+              <button id="btnMultiplicar" class="shortcut bg-color-white">
+                <span class="icon"><i class="icon-cancel-2 fg-color-orangeDark"></i></span>
+                <span class="label fg-color-orangeDark">Multiplar</span>
+              </button>
+              <button id="btnDividir" class="shortcut bg-color-white">
+                <span class="icon"><i class="icon-tree-view fg-color-yellow"></i></span>
+                <span class="label fg-color-yellow">Dividir</span>
+              </button>
+              <button id="btnLimpar" class="shortcut bg-color-white">
+                <span class="icon"><i class="icon-blocked fg-color-blueLight"></i></span>
+                <span class="label fg-color-darken">Limpar</span>
+              </button>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="page">
+    <div class="nav-bar">
+      <div class="nav-bar-inner padding10">
+        <span class="element">
+          Minicurso de introdução ao SauceLabs © by <a class="fg-color-white" href="https://github.com/igorlima" target="_blank">igorlima</a>
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <script src="vendor/jquery-1.10.2.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="vendor/input-control.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/calculadora.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/app.js" type="text/javascript" charset="utf-8"></script>
+  <script>
+    console.log("I am done");
+  </script>
+</body>
+</html>
