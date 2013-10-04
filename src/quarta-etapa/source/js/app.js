@@ -41,6 +41,7 @@
   BOTAO.LIMPAR.click( function(){
     INPUT.PRIMEIRO_NUMERO.val( '' );
     INPUT.SEGUNDO_NUMERO.val( '' );
+    INPUT.RESULTADO.val( '' );
   });
 
 })(this, Calculadora);

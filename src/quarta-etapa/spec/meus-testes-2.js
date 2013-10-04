@@ -5,63 +5,59 @@ var vows    = require('vows'),
 
 vows.describe('Limpando os campos de números')
 .addBatch({
-  'Criando uma nova sessão no WebDriver': {
-    topic: function() {
-      var callback = this.callback;
-      browser.init( {}, function(err, sessionID, capabilities) {
-        callback( err );
-      });
-    },
-    'Sessão criada': function() { /**...*/ }
-  }
-})
-.addBatch({
   'Acessando a página da calculadora': {
     topic: function() {
       var callback = this.callback;
-      browser.get( 'http://localhost:9001', function(err) {
-        callback( err );
+      browser.init( {}, function(err, sessionID, capabilities) {
+        err && callback( err );
+        browser.get( 'http://localhost:9001', function(err) {
+          callback( err );
+        });
       });
     },
     'Página de teste aberta': function() { /**...*/ }
   }
 })
 .addBatch({
-  'Selecionando o campo do primeiro número': {
+  'Digitando o número 20 no primeiro campo': {
     topic: function() {
       var callback = this.callback;
       browser.elementByCssSelector( 'div#primeiro-numero .input-control.text input', function(err, element) {
-        callback( err, element );
-      });
-    },
-    "Digitando o número '20'": {
-      topic: function(element) {
-        var callback = this.callback;
+        err && callback( err );
         element.type( "20", function(err) {
           callback( err, element );
         });
-      },
-      'Número 20 digitado': function() { /**...*/ }
-    }
+      });
+    },
+    'Número 20 digitado': function() { /**...*/ }
   }
 })
 .addBatch({
-  'Selecionando o campo do segundo número': {
+  'Digitando o número 4 no campo do segundo número': {
     topic: function() {
       var callback = this.callback;
       browser.elementByCssSelector( 'div#segundo-numero .input-control.text input', function(err, element) {
-        callback( err, element );
-      });
-    },
-    "Digitando o número '4'": {
-      topic: function(element) {
-        var callback = this.callback;
+        err && callback( err );
         element.type( "4", function(err) {
           callback( err, element );
         });
-      },
-      'Número 4 digitado': function() { /**...*/ }
-    }
+      });
+    },
+    'Número 4 digitado': function() { /**...*/ }
+  }
+})
+.addBatch({
+  'Clicando no botão de somar': {
+    topic: function() {
+      var callback = this.callback;
+      browser.elementByCssSelector( 'button#btnSomar', function(err, botao_de_somar) {
+        err && callback(err);
+        botao_de_somar.click( function(err){
+          callback(err, botao_de_somar);
+        })
+      });
+    },
+    'clicado': function() { /**...*/ }
   }
 })
 .addBatch({
@@ -75,42 +71,46 @@ vows.describe('Limpando os campos de números')
         })
       });
     },
-    'Selecionando o campo do primeiro número': {
+    'O campo do primeiro número': {
       topic: function(botao_de_limpar) {
         var callback = this.callback;
         browser.elementByCssSelector( 'div#primeiro-numero .input-control.text input', function(err, campo_do_primeiro_numero) {
-          callback( err, campo_do_primeiro_numero );
-        });
-      },
-      "Pegando o valor contido no primerio campo": {
-        topic: function(campo_do_primeiro_numero, botao_de_limpar) {
-          var callback = this.callback;
+          err && callback( err );
           campo_do_primeiro_numero.getValue( function(err, primeiro_numero) {
             callback( err, primeiro_numero );
           });
-        },
-        'O valor do primerio campo DEVE estar vazio': function(primeiro_numero) {
-          expect( primeiro_numero ).to.be.empty;
-        }
+        });
+      },
+      'DEVE estar vazio': function(primeiro_numero) {
+        expect( primeiro_numero ).to.be.empty;
       }
     },
-    'Selecionando o campo do segundo número': {
+    'O campo do segundo número': {
       topic: function(botao_de_limpar) {
         var callback = this.callback;
         browser.elementByCssSelector( 'div#segundo-numero .input-control.text input', function(err, campo_do_segundo_numero) {
-          callback( err, campo_do_segundo_numero );
-        });
-      },
-      "Pegando o valor contido no segundo campo": {
-        topic: function(campo_do_segundo_numero, botao_de_limpar) {
-          var callback = this.callback;
+          err && callback( err );
           campo_do_segundo_numero.getValue( function(err, segundo_numero) {
             callback( err, segundo_numero );
           });
-        },
-        'O valor do segundo campo DEVE estar vazio': function(segundo_numero) {
-          expect( segundo_numero ).to.be.empty;
-        }
+        });
+      },
+      'DEVE estar vazio': function(segundo_numero) {
+        expect( segundo_numero ).to.be.empty;
+      }
+    },
+    'O valor do resultado da calculadora': {
+      topic: function(botao_de_limpar) {
+        var callback = this.callback;
+        browser.elementByCssSelector( 'div#resultado-da-calculadora .input-control.text input', function(err, campo_do_resultado) {
+          err && callback( err );
+          campo_do_resultado.getValue( function(err, resultado) {
+            callback( err, resultado );
+          });
+        });
+      },
+      'DEVE estar vazio': function(resultado) {
+        expect( resultado ).to.be.empty;
       }
     }
   }
@@ -134,7 +134,6 @@ vows.describe('Limpando os campos de números')
         var callback = this.callback;
         browser.takeScreenshot( function(err, screenshot) {
           fs.writeFile('screenshot.png', screenshot, 'base64', function(err){
-            console.log('File saved.');
             callback(err, element);
           });
         });
