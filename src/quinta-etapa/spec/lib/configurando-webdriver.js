@@ -1,10 +1,28 @@
 var exports   = module.exports = {},
     webdriver = require('wd'),
-    desired   = exports.desired = {},
+
+    desired   = exports.desired = process.env.browserNameSL && {
+      "browserName": process.env.browserNameSL,
+      "version"    : process.env.versionSL,
+      "platform"   : process.env.platformSL,
+      "tags"       : ["quinta-etapa", "minicurso"],
+      "name"       : "Teste de interface da 5a etapa",
+      "public"     : "public",
+      "build"      : process.env.TRAVIS_BUILD_NUMBER || "dev-build",
+      "tunnel-identifier": "minicurso",
+      "record-video": true
+    },
+
+    auth      = exports.auth = {
+      username:  desired && process.env.SAUCE_USERNAME,
+      accessKey: desired && process.env.SAUCE_ACCESS_KEY
+    },
+
     browser   = exports.browser = webdriver.remote({
-      hostname: "localhost",
-      port: 8910
+      hostname: desired ? "ondemand.saucelabs.com" : "localhost",
+      port: desired ? 80 : 8910
     }),
+
     elements = exports.ELEMENTS = {
       INPUT: {},
       BUTTONS: {}
