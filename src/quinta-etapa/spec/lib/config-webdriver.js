@@ -28,6 +28,14 @@ var exports   = module.exports = {},
       BUTTONS: {}
     };
 
+browser.on("status", function(info) {
+  //console.log("\x1b[36m%s\x1b[0m", info);
+});
+
+browser.on("command", function(meth, path, data) {
+  //console.log(" > \x1b[33m%s\x1b[0m: %s", meth, path, data || "");
+});
+
 /**
 Vows Errored » callback not fired
 http://birkett.no/blog/2013/05/01/vows-errored-callback-not-fired/

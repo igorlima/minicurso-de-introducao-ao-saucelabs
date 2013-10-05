@@ -1,0 +1,21 @@
+framework: jasmine
+
+src_files:
+  - source/js/calculadora.js
+  - spec/jasmine/calculadora.js
+
+launchers:
+  WinXP_Opera:
+    command: browserNameSL='opera' versionSL='12' platformSL='Windows XP' node spec/lib/saucelauncher-webdriver.js
+
+  Win7_IE_9:
+    command: browserNameSL='internet explorer' versionSL='9' platformSL='Windows 7' node spec/lib/saucelauncher-webdriver.js
+
+  Win8_IE_10:
+    command: browserNameSL='internet explorer' versionSL='10' platformSL='Windows 8' node spec/lib/saucelauncher-webdriver.js
+
+  iPhone:
+    command: browserNameSL='iphone' versionSL='6' platformSL='OS X 10.8' node spec/lib/saucelauncher-webdriver.js
+
+launch_in_ci: [WinXP_Opera, Win7_IE_9, Win8_IE_10, iPhone]
+launch_in_dev: [phantomjs]

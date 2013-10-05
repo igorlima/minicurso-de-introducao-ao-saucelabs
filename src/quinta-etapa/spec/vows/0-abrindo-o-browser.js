@@ -1,5 +1,5 @@
 var vows     = require('vows'),
-    config   = require('../lib/configurando-webdriver.js'),
+    config   = require('../lib/config-webdriver.js'),
     browser  = config.browser,
     desired  = config.desired,
     ELEMENTS = config.ELEMENTS;
