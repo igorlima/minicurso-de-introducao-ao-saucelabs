@@ -1,15 +1,15 @@
 (function (global, Calculadora) {
   var BOTAO = {
-        SOMAR: $("#btnSomar"),
-        SUBTRAIR: $("#btnSubtrair"),
+        SOMAR:       $("#btnSomar"),
+        SUBTRAIR:    $("#btnSubtrair"),
         MULTIPLICAR: $("#btnMultiplicar"),
-        DIVIDIR: $("#btnDividir"),
-        LIMPAR: $("#btnLimpar")
+        DIVIDIR:     $("#btnDividir"),
+        LIMPAR:      $("#btnLimpar")
       },
       INPUT = {
         PRIMEIRO_NUMERO: $("div#primeiro-numero .input-control.text input"),
-        SEGUNDO_NUMERO: $("div#segundo-numero .input-control.text input"),
-        RESULTADO: $("div#resultado-da-calculadora .input-control.text input")
+        SEGUNDO_NUMERO:  $("div#segundo-numero .input-control.text input"),
+        RESULTADO:       $("div#resultado-da-calculadora .input-control.text input")
       },
       getNumeros = function() {
         return {
