@@ -971,7 +971,17 @@ BOTAO.LIMPAR.click( function(){
   <div id="github" class="step slide" data-x="-4800" data-y="3000" data-rotate="-20" data-scale="2">
     <h1><a href="https://github.com/" target="_blank">GitHub</a></h1>
     <p>Após criar uma conta no <a href="https://github.com/" target="_blank">GitHub</a>:</p>
-    <pre class="prettyprint lang-sh">
+    <pre class="prettyprint lang-sh">#identificando dos commits
+git config --global user.name "Nome Sobrenome"
+git config --global user.email "seu_email@email.com"
+
+#criando chave SSH
+ssh-keygen -t rsa -C "minicurso - seu_email@email.com"
+
+#testando chave SSH (aparecerá uma mensagem do tipo):
+#   "Hi igorlima! You've successfully authenticated,
+#    but GitHub does not provide shell access."
+ssh -T git@github.com
     </pre>
   </div>
 
