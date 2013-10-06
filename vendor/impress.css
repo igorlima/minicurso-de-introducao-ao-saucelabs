@@ -306,6 +306,14 @@ img.watching-test-on-saucelabs {
     height: 530px;
 }
 
+h1#other-alternatives {
+    float: right;
+    -webkit-transform:rotate(-10deg);
+    -moz-transform:rotate(-10deg);
+    -o-transform:rotate(-10deg);
+    transform:rotate(-10deg);
+}
+
 #impress ul { list-style-type: arabic-indic; list-style-position: inside; margin: 10px 0 0 10px; }
 #impress ul li { margin-bottom: 5px; }
 
