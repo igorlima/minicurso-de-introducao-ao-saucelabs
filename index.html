@@ -968,58 +968,27 @@ BOTAO.LIMPAR.click( function(){
     </ul>
   </div>
 
-  <div id="staging" class="step slide" data-x="-4800" data-y="3000" data-rotate="-20" data-scale="2">
-    <h1>partial commit with staging area (GUI recommended, e.g. GitX)</h1>
-    <p>one afternoon, you made changes to 15 files; now you want to commit it in 3 parts!</p>
-    <pre>
-$ touch foo.py bar.py bazzz.py
-$ git add foo.py bar.py
-
-# alternatively, staging patch by patch, interactively
-$ git add -p
-
-# this reset the staging area, but leaving the working tree dirty
-$ git reset
+  <div id="github" class="step slide" data-x="-4800" data-y="3000" data-rotate="-20" data-scale="2">
+    <h1><a href="https://github.com/" target="_blank">GitHub</a></h1>
+    <p>Após criar uma conta no <a href="https://github.com/" target="_blank">GitHub</a>:</p>
+    <pre class="prettyprint lang-sh">
     </pre>
   </div>
 
-  <div id="cleanup" class="step slide" data-x="-4800" data-y="4500" data-rotate="-20" data-scale="2">
-    <h1>cleaning up the mess</h1>
-    <pre>
-# just unstage the file, don't overwrite working copy
-$ git reset HEAD -- file.py
-
-# checkout file from HEAD, overwriting working copy
-$ git checkout -- oldstuff.py
-
-# checkout subdir from old version, overwriting working copy
-git checkout v3.25.1 -- path/to/dir
-
-# i committed and pushed something is just broken :(,
-# this makes an extra commit that is
-# the negatation the changes in badcommit.
-$ git revert badcommit
-    </pre>
+  <div id="github-ssh-key" class="step slide" data-x="-4800" data-y="4500" data-rotate="-20" data-scale="2">
+    <h1>SSH Key no Github...</h1>
+    <img src="img/github-editting-profile.png">
+    <img src="img/github-selecting-ssh-key-option.png">
   </div>
 
-  <div id="hist" class="step slide" data-x="-4800" data-y="6000" data-rotate="-20" data-scale="2">
-    <h1>viewing history</h1>
-    <pre>
-# idonethis!
-$ git log --author=Hai-Anh --since="12 hours ago"
+  <div class="step slide" data-x="-4800" data-y="6000" data-rotate="-20" data-scale="2">
+    <h1>Lista SSH Key...</h1>
+    <img src="img/github-my-ssh-keys.png">
+  </div>
 
-# list all commits since branch 3.24
-$ git log v3.24..master >> release-notes.txt
-
-# did anyone touch the config file?
-$ git log v3.24..master -- src/config/settings.py
-
-# show file diff against old version
-$ git diff v2.5.1:foobar.py HEAD:foobar.py
-
-# grepping through history
-$ git grep XXX v3.25
-    </pre>
+  <div class="step slide" data-x="-4800" data-y="7500" data-rotate="-20" data-scale="2">
+    <h1>Adicionando uma nova SSH Key...</h1>
+    <img src="img/github-adding-ssh-key.png">
   </div>
 
   <div id="80branches" class="step slide" data-x="-3000" data-y="5000" data-rotate="-90" data-scale="1">
