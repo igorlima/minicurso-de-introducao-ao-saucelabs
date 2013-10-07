@@ -306,6 +306,12 @@ img.watching-test-on-saucelabs {
     height: 530px;
 }
 
+a.travis-badge {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
 h1#other-alternatives {
     float: right;
     -webkit-transform:rotate(-10deg);
