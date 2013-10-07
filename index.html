@@ -1018,6 +1018,54 @@ ssh -T git@github.com
     <a class="travis-badge" href="https://travis-ci.org/igorlima/simple-calculator" target="_blank">
       <img src="https://travis-ci.org/igorlima/simple-calculator.png" alt="Travis CI badge" />
     </a>
+    <pre class="prettyprint lang-sh" style="font-size: 0.8em">language: node_js
+node_js:
+  - "0.10"
+before_install:
+  # Using PhantomJS (Headless browser testing on travis-ci.org)
+  # http://about.travis-ci.org/docs/user/gui-and-headless-browsers/#Using-PhantomJS
+  # http://phantomjs.org/
+  - phantomjs --webdriver=localhost:8910 &> phantomjs.log &
+
+  # Run tests completely in the cloud using Travis CI and Sauce Labs
+  # https://saucelabs.com/opensource/travis
+  # http://saucelabs.com/downloads/Sauce-Connect-latest.zip
+  - curl https://gist.github.com/santiycr/5139565/raw/sauce_connect_setup.sh | bash &> sauce_connect_setup.log</pre>
+  </div>
+
+  <div class="step slide" data-x="-6500" data-y="12625" data-rotate="-20" data-scale="2">
+    <h1>Entendendo o arquivo <i>.travis.yml</i></h1>
+    <a class="travis-badge" href="https://travis-ci.org/igorlima/simple-calculator" target="_blank">
+      <img src="https://travis-ci.org/igorlima/simple-calculator.png" alt="Travis CI badge" />
+    </a>
+    <pre class="prettyprint lang-sh" style="font-size: 0.8em">before_script:
+  - npm install -g grunt-cli testem vows
+  - npm test
+script:
+  - testem ci -P 3 -f testem.yml --port 8080
+  - browserNameSL='ipad' versionSL='6'  platformSL='OS X 10.8' grunt
+  - browserNameSL='firefox' versionSL='24' platformSL='Linux' grunt
+  - browserNameSL='chrome' versionSL='' platformSL='Linux' grunt
+  - browserNameSL='internet explorer' versionSL='10' platformSL='Windows 8' grunt</pre>
+  </div>
+
+  <div class="step slide" data-x="-8200" data-y="13250" data-rotate="-20" data-scale="2">
+    <h1>Entendendo o arquivo <i>.travis.yml</i></h1>
+    <a class="travis-badge" href="https://travis-ci.org/igorlima/simple-calculator" target="_blank">
+      <img src="https://travis-ci.org/igorlima/simple-calculator.png" alt="Travis CI badge" />
+    </a>
+    <pre class="prettyprint lang-sh" style="font-size: 0.8em"># Secure environment variables
+env:
+  global:
+    - secure: "GIMaIdIdu4dWXJdNNCvZ36irHGQLebRbqllHG8bpCR1W6ZvV0"
+    - secure: "O4U76bEyuPZXsJwiIOhT5sIAD2QFa164Uku1MMT703OiR8jSg"
+
+#Continuous Deployment to Heroku
+deploy:
+  provider: heroku
+  app: simple-calculator # optional if it's the same as your repo name
+  api_key:
+    secure: R7oh9D5YDdEOcTSUgIGD2I+WhmtwVjLonb43Cv/N9mtKjXzXXLd</pre>
   </div>
 
   <div class="step slide" data-x="-4800" data-y="13500" data-rotate="-20" data-scale="2">
